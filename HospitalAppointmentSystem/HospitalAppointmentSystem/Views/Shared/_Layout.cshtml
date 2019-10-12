@@ -14,7 +14,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
 </head>
-<body style="background-color:#D8E6EC">
+<body style="background-image:url(@($"../../fonts/arkaplan.jpg"))">
     <div class="navbar navbar-fixed-top navbar-dark bg-dark navbar-expand-md navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -24,7 +24,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="~/fonts/hospitalicon.png" width="50" height="50" alt="" /></a>
-                @Html.ActionLink("HOSPİTAL APPOİNTMMENT SYSTEM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*<a class="navbar-brand" href="@Url.Action("Index","Home")">HOSPİTAL APPOİNTMMENT SYSTEM</a>*@
+                @Html.ActionLink("HOSPİTAL APPOİNTMMENT SYSTEM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style= "vertical-align: middle; display:inline-block;padding-top:20px" })
             </div>
             <div class="navbar-collapse collapse" id=".navbar-collapse">
                 <ul class="navbar-nav text-white">
@@ -42,10 +43,9 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="navbar-collapse" id=".navbar-collapse navbar-right">
-                <button type="button" class="btn btn-outline-primary">   Register   </button>
-                <button type="button" class="btn btn-outline-primary">   Sign In   </button>
+            <div style="display:inline-block !important" class="navbar-collapse" id=".navbar-collapse navbar-right">
+                <button style="margin-left:75px;" type="button" class="btn btn-outline-primary">   Register   </button>
+                <button style="margin-left:10px;" type="button" class="btn btn-outline-primary">   Sign In   </button>
             </div>
         </div>
 

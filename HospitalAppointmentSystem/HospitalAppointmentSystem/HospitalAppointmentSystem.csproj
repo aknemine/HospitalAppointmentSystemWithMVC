@@ -138,6 +138,7 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\HASDatabase.cs" />
+    <Compile Include="Models\HASRepostory.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Polyclinic.cs" />
