@@ -117,6 +117,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\hospitalicon.png" />
     <Content Include="Global.asax" />
+    <Content Include="Images\doktorlarimage.jpg" />
+    <Content Include="Images\mainpageicon.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -140,6 +142,7 @@
     <Compile Include="Models\HASDatabase.cs" />
     <Compile Include="Models\HASRepostory.cs" />
     <Compile Include="Models\Hospital.cs" />
+    <Compile Include="Models\ModelFactory\UserForRegister.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Polyclinic.cs" />
     <Compile Include="Models\Town.cs" />
@@ -155,6 +158,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

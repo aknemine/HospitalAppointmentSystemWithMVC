@@ -3,3 +3,31 @@
     ViewBag.Title = "MainPage";
 }
 
+<style>
+    #form1 input{
+        margin-top:5px;
+    }
+</style>
+
+<div style="position:relative; width:72%;display:inline-block">
+    <img src="~/Images/doktorlarimage.jpg" alt="" width="100%"/>
+    <img src="~/Images/mainpageicon.jpg" alt="" style="position:absolute; bottom:25px; left:12.5%; opacity:0.8; width:75%" />
+</div>
+<div style="width:23%;display:inline-block; text-align:center;">
+    <p style="text-align:center;font-weight:bold;font-size:15px;"> Register </p>
+    <form method="post" action="@Url.Action("Register","Home")" id="form1">
+        <input name="Id" type="text" placeholder="Identity No" /><br />
+        <input name="name" type="text" placeholder="First Name" /><br />
+        <input name="surname" type="text" placeholder="Last Name" /><br />
+        <input name="email" type="text" placeholder="Mail" /><br />
+        <input name="telephone" type="text" placeholder="Phone Number" /><br />
+        <input name="age" type="text" placeholder="Age" /><br />
+        <input name="password" type="password" placeholder="Password" /><br />
+        @*<input type="text" placeholder="RePassword" /><br />*@
+        <input name="bloodGroup" type="text" placeholder="Blood Group" /><br />
+        <input name="gender" type="radio" value="Female"/>Female
+        <input name="gender" type="radio" value="Male"/>Male
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+    </form>
+</div>

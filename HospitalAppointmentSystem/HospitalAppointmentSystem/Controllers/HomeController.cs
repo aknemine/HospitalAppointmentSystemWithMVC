@@ -1,4 +1,5 @@
 ﻿using HospitalAppointmentSystem.Models;
+using HospitalAppointmentSystem.Models.ModelFactory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,32 @@ namespace HospitalAppointmentSystem.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            HASDatabase _context = new HASDatabase();
-            _context.City.Add(new City() { name = "ASD" });
             return View("MainPage");
 
+        }
+        [HttpPost]
+        public ActionResult Register(UserForRegister user)
+        {
+            HASDatabase _context = new HASDatabase();
+
+            _context.Patient.Add(new Patient()
+            {
+                Id = user.Id,
+                age = user.age,
+                bloodGroup = user.bloodGroup,
+                email = user.email,
+                gender = user.gender,
+                name = user.name,
+                surname = user.surname,
+                password = user.password,
+                telephone = user.telephone,
+                isDeleted = false,
+                isAdmin = user.Id == 10101010 ? true : false,
+                deletingTime = DateTime.Now
+
+            });
+            _context.SaveChanges();
+            return View();
         }
     }
 }
