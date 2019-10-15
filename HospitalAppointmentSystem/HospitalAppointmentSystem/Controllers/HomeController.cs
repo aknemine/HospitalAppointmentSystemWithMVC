@@ -40,5 +40,32 @@ namespace HospitalAppointmentSystem.Controllers
             _context.SaveChanges();
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Signin (UserForSignin user)
+        {
+            using (HASDatabase db = new HASDatabase())
+            {
+                var userDetail = db.Patient.Where(x => x.Id == user.Id && x.password == user.password).FirstOrDefault();
+                if(userDetail == null)
+                {
+                    user.SigninErrorMsg = "Invalid TC Identity Number or Password!";
+                    return View("Index", user);
+                }
+                else
+                {
+                    Session["userID"] = user.Id;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            
+
+        }
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
+        
     }
 }

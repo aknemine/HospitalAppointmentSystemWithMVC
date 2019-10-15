@@ -13,6 +13,11 @@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-image:url(@($"../../fonts/arkaplan.jpg"))">
     <div class="navbar navbar-fixed-top navbar-dark bg-dark navbar-expand-md navbar-inverse">
@@ -25,7 +30,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html"><img src="~/fonts/hospitalicon.png" width="50" height="50" alt="" /></a>
                 @*<a class="navbar-brand" href="@Url.Action("Index","Home")">HOSPİTAL APPOİNTMMENT SYSTEM</a>*@
-                @Html.ActionLink("HOSPİTAL APPOİNTMMENT SYSTEM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style= "vertical-align: middle; display:inline-block;padding-top:20px" })
+                @Html.ActionLink("HOSPİTAL APPOİNTMMENT SYSTEM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "vertical-align: middle; display:inline-block;padding-top:20px" })
             </div>
             <div class="navbar-collapse collapse" id=".navbar-collapse">
                 <ul class="navbar-nav text-white">
@@ -45,8 +50,18 @@
             </div>
             <div style="display:inline-block !important" class="navbar-collapse" id=".navbar-collapse navbar-right">
                 <button style="margin-left:75px;" type="button" class="btn btn-outline-primary">   Register   </button>
-                <button style="margin-left:10px;" type="button" class="btn btn-outline-primary">   Sign In   </button>
+                <button style="margin-left:10px;" type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#signin">   Sign In   </button>
             </div>
+
+
+            
+
+            
+
+
+
+
+
         </div>
 
     </div>

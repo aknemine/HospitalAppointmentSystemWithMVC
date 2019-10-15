@@ -13,21 +13,99 @@
     <img src="~/Images/doktorlarimage.jpg" alt="" width="100%"/>
     <img src="~/Images/mainpageicon.jpg" alt="" style="position:absolute; bottom:25px; left:12.5%; opacity:0.8; width:75%" />
 </div>
-<div style="width:23%;display:inline-block; text-align:center;">
-    <p style="text-align:center;font-weight:bold;font-size:15px;"> Register </p>
-    <form method="post" action="@Url.Action("Register","Home")" id="form1">
-        <input name="Id" type="text" placeholder="Identity No" /><br />
-        <input name="name" type="text" placeholder="First Name" /><br />
-        <input name="surname" type="text" placeholder="Last Name" /><br />
-        <input name="email" type="text" placeholder="Mail" /><br />
-        <input name="telephone" type="text" placeholder="Phone Number" /><br />
-        <input name="age" type="text" placeholder="Age" /><br />
-        <input name="password" type="password" placeholder="Password" /><br />
-        @*<input type="text" placeholder="RePassword" /><br />*@
-        <input name="bloodGroup" type="text" placeholder="Blood Group" /><br />
-        <input name="gender" type="radio" value="Female"/>Female
-        <input name="gender" type="radio" value="Male"/>Male
-        <button type="submit">Submit</button>
-        <button type="reset">Clear</button>
+<div style="width:20%; position:absolute; display:inline-block; align-content:center; padding-left:50px">
+    <h1 style="text-align:center; font-weight:bold; font-size:15px;"> Register </h1>
+    <p style="text-align:center">Please fill in this form to create an account.</p>
+    <hr>
+    <form style="position:absolute" class="form-inline" method="post" action="@Url.Action("Register","Home")" id="form1">
+        <div class="container">
+
+            <label style="display:inline-block; font-weight:300" for="Id"><b>TC Identity Number</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter TC Identity Number" name="Id" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="name"><b>First Name</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter First Name" name="name" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="surname"><b>Last Name</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Last Name" name="surname" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="email"><b>Email</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Email" name="email" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="telephone"><b>Phone Number</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="tel" placeholder="Enter Phone Number" name="telephone" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="bloodGroup"><b>Blood Group</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="text" placeholder="Enter Blood Group" name="bloodGroup" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="age"><b>Age</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="number" placeholder="Enter Age" name="age" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="password"><b>Password</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="password" placeholder="Enter Password" name="password" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" data-error="wrong" data-success="right" for="psw-repeat"><b>Repeat Password</b></label>
+            <input style="width: 100%;" class="form-control mb-2 mr-sm-2" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <hr>
+
+            <label style="display:inline-block; font-weight:300" for="gender"><b>Female</b></label>
+            <input type="radio" name="gender" required>
+
+
+            <label style="display:inline-block; font-weight:300" for="gender"><b>Male</b></label>
+            <input type="radio" name="gender" required>
+            <hr>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <button type="submit" class="btn btn-primary mb-2">Register</button>
+            <button type="reset" class="btn btn-primary mb-2">Clear</button>
+        </div>
+        <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+
     </form>
+</div>
+
+<div id="signin" method="post" action="@Url.Action("Signin","Home")" style="position:relative" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div style="margin:0;" class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                <button stype="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-idno">Your TC Identtity Number</label>
+                    <input name="Id" type="text" id="defaultForm-idno" class="form-control validate">
+                    
+                </div>
+
+                <div class="md-form mb-4">
+                    <i class="fas fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Your Password</label>
+                    <input name="password" type="password" id="defaultForm-pass" class="form-control validate">
+                    
+                </div>
+
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary mb-2">Sign In</button>          
+                <button type="reset" class="btn btn-primary mb-2">Clear</button>
+            </div>
+        </div>
+    </div>
 </div>

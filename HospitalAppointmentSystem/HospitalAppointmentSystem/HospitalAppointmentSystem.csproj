@@ -143,6 +143,7 @@
     <Compile Include="Models\HASRepostory.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\ModelFactory\UserForRegister.cs" />
+    <Compile Include="Models\ModelFactory\UserForSignin.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Polyclinic.cs" />
     <Compile Include="Models\Town.cs" />
@@ -159,6 +160,7 @@
     <Content Include="Views\Home\MainPage.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Signin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
